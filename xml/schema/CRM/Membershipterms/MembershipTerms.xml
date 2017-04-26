@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+    <base>CRM/Membershipterms</base>
+    <class>MembershipTerms</class>
+    <name>civicrm_membershipterms</name>
+    <comment>FIXME</comment>
+    <add>4.4</add>
+    <log>true</log>
+
+    <field>
+        <name>id</name>
+        <type>int unsigned</type>
+        <required>true</required>
+        <comment>Unique MembershipTerms ID</comment>
+        <add>4.4</add>
+    </field>
+    <primaryKey>
+        <name>id</name>
+        <autoincrement>true</autoincrement>
+    </primaryKey>
+
+    <field>
+        <name>contact_id</name>
+        <type>int unsigned</type>
+        <comment>FK to Contact</comment>
+        <add>4.4</add>
+    </field>
+    <foreignKey>
+        <name>contact_id</name>
+        <table>FK_civicrm_membership_terms_contact_id</table>
+        <key>id</key>
+        <add>4.4</add>
+        <onDelete>CASCADE</onDelete>
+    </foreignKey>
+
+
+    <field>
+        <name>membership_id</name>
+        <type>int unsigned</type>
+        <comment>FK to Membership Table</comment>
+        <add>4.4</add>
+    </field>
+    <foreignKey>
+        <name>membership_id</name>
+        <table>FK_civicrm_membership_terms_membership_id</table>
+        <key>id</key>
+        <add>4.4</add>
+        <onDelete>CASCADE</onDelete>
+    </foreignKey>
+
+    <field>
+        <name>contribution_id</name>
+        <type>int unsigned</type>
+        <comment>FK to Contribution Table</comment>
+        <add>4.4</add>
+    </field>
+    <foreignKey>
+        <name>membership_id</name>
+        <table>FK_civicrm_membership_terms_contribution_id</table>
+        <key>id</key>
+        <add>4.4</add>
+        <onDelete>CASCADE</onDelete>
+    </foreignKey>
+
+
+    <field>
+        <name>start_date</name>
+        <type>date</type>
+        <default>NULL</default>
+        <export>true</export>
+        <import>true</import>
+        <required>false</required>
+        <dataPattern>/\d{4}-?\d{2}-?\d{2}/</dataPattern>
+        <comment>Start Date</comment>
+        <html>
+            <type>Select Start Date</type>
+            <formatType>birth</formatType>
+        </html>
+    </field>
+    
+    <field>
+        <name>end_date</name>
+        <type>date</type>
+        <default>NULL</default>
+        <export>true</export>
+        <import>true</import>
+        <required>false</required>
+        <dataPattern>/\d{4}-?\d{2}-?\d{2}/</dataPattern>
+        <comment>End Date</comment>
+        <html>
+            <type>Select End Date</type>
+            <formatType>birth</formatType>
+        </html>
+    </field>
+    
+</table>

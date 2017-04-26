@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/membership-terms</path>
+    <page_callback>CRM_Membershipterms_Page_MembershipTerms</page_callback>
+    <title>MembershipTerms</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
